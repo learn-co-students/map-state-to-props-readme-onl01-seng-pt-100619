@@ -21,4 +21,9 @@ class App extends Component {
   }
 };
 
-export default App;
+const mapStateToProps = (state) => {
+  return { items: state.items };
+}; //specify which slice of the state to provide to component
+// (state.items) and allow component to have access to them through a prop called items
+ 
+export default connect(mapStateToProps)(App); //synced up to our store, listening to each change in the state that occurs. 
